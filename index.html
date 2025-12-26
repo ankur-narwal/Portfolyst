@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolyst — Curated Portfolios</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mobres.css">
+  <link rel="icon" href="assets/images/favicon.png" />
+</head>
+<body>
+<header class="site-header desktop-only-header">
+  <div class="header-inner">
+    <div class="brand">
+      <a href="index.html" style="text-decoration:none; display:flex; align-items:center;">
+        <span class="logo-book">P</span><span class="brand-name">ortfolyst</span>
+      </a>
+    </div>
+
+    <nav class="main-nav" style="margin-left: 30px; display: flex; gap: 24px;">
+      <a href="index.html" class="active" style="text-decoration: none; color: var(--text);">Home</a>
+      <a href="blog.html" style="text-decoration: none; color: var(--text); font-weight: 500;">Blog</a>
+      <a href="services.html" style="text-decoration: none; color: var(--text); font-weight: 500;">Services</a>
+      <a href="about.html" style="text-decoration: none; color: var(--text); font-weight: 500;">About Us</a>
+      <a href="contact.html" style="text-decoration: none; color: var(--text); font-weight: 500;">Contact Us</a>
+    </nav>
+
+    <div class="header-actions">
+      <button id="theme-toggle" class="icon-btn" title="Toggle dark/light">🌙</button>
+      <a href="submit.html" class="submit-btn">Submit Portfolio</a>
+    </div>
+  </div>
+</header>
+
+<header class="site-header mobile-only-header">
+  <div class="mobile-header-inner">
+    <button class="menu-toggle">☰</button>
+    
+    <div class="brand">
+       <a href="index.html" style="text-decoration:none; display:flex; align-items:center; color:inherit;">
+         <span class="logo-book">P</span><span class="brand-name">ortfolyst</span>
+       </a>
+    </div>
+
+    <button id="theme-toggle-mobile" class="icon-btn">🌙</button>
+  </div>
+
+  <nav class="mobile-drawer">
+    <button class="drawer-close">✕</button>
+    
+    <a href="index.html">Home</a>
+    <a href="blog.html">Blog</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="submit.html" style="color: var(--accent); font-weight:bold;">Submit Portfolio</a>
+  </nav>
+</header>
+
+  <main>
+    <section class="hero">
+      <h1>Portfolyst</h1>
+      <p class="subtitle">Curating inspiring portfolios and showing how they’re made.</p>
+    </section>
+
+    <section class="controls">
+      <nav class="filters" aria-label="category filters">
+        <button class="filter-btn active" data-cat="all">All</button>
+        <button class="filter-btn" data-cat="code">Code</button>
+        <button class="filter-btn" data-cat="nocode">No Code</button>
+        <button class="filter-btn" data-cat="dark">Dark</button>
+        <button class="filter-btn" data-cat="light">Light</button>
+        <button class="filter-btn" data-cat="minimal">Minimalist</button>
+        <button class="filter-btn" data-cat="fancy">Fancy</button>
+      </nav>
+
+      <div class="search-wrap">
+        <input id="search" type="search" placeholder="search by name" aria-label="search portfolios">
+      </div>
+    </section>
+<section class="grid" id="portfolio-grid">
+      </section>
+
+    <footer class="site-footer">
+  <div class="footer-inner">
+    <span><p>Made with ❤️ by Portfolyst</p></span>
+    <span class="social-links">
+      <p>follow our socials: </p>
+      <a href="https://ankur-narwal.github.io/my_portfolio/"><img src="assets/images/download.png" alt="Portfolio"></a>
+      <a href="http://linkedin.com/in/ankur-narwal"><img src="assets/images/linkedin.webp" alt="LinkedIn"></a>
+      <a href="https://github.com/ankur-narwal"><img src="assets/images/github.png" alt="GitHub"></a>
+    </span>
+  </div>
+</footer>
+
+  </main>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+
+  
+</body>
+</html>

@@ -1,0 +1,273 @@
+/* mobres.css */
+
+@media (max-width: 768px) {
+  
+  /* 1. SWAP HEADERS */
+  .desktop-only-header {
+    display: none !important;
+  }
+
+  .mobile-only-header {
+    display: block !important;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* 2. MOBILE HEADER LAYOUT */
+  .mobile-header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+  }
+
+  /* Hamburger Button */
+  .menu-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text);
+    padding: 0;
+  }
+
+  /* mobres.css UPDATE */
+
+/* USE THIS SIMPLE VERSION INSTEAD */
+.mobile-drawer {
+  position: fixed;
+  top: 0; 
+  left: -100%;
+  width: 65%;
+  height: 100vh;
+  background: var(--card-bg);
+  z-index: 9999 !important; /* This fixes the "Under Portfolyst" bug */
+  padding-top: 80px; /* Space at top */
+  transition: left 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border);
+}
+
+.mobile-drawer.active {
+  left: 0; /* Simple slide in */
+}
+
+.mobile-drawer a {
+  padding: 15px 25px;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text);
+  font-size: 18px;
+}
+
+  /* 4. NETFLIX STYLE FILTERS */
+  .controls {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 20px;
+    width: 100%;
+    overflow: hidden; 
+  }
+
+  .filters {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 12px;
+    width: 100%;
+    padding-bottom: 15px;
+    -webkit-overflow-scrolling: touch; 
+  }
+  
+  /* Hide scrollbar */
+  .filters::-webkit-scrollbar { display: none; }
+
+  /* Pill Buttons */
+  .filter-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 8px 18px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 50px;
+  }
+  
+  .filter-btn.active {
+    background: var(--accent);
+    color: white;
+    border: none;
+  }
+
+  .search-wrap {
+    width: 100%;
+    margin-top: 10px;
+  }
+  #search { width: 100%; }
+
+  /* 5. CARDS (Full Width) */
+  .grid {
+    grid-template-columns: 1fr; /* Single Column */
+    padding: 0 20px;
+  }
+  
+  .card-thumb .thumb {
+    height: 150px; /* Force consistent height */
+    width: 100%;
+  }
+
+  /* 6. FOOTER */
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+}
+
+/* --- DETAIL PAGE STYLING (Safe Mobile Only) --- */
+@media (max-width: 768px) {
+  
+  .portfolio-hero {
+    flex-direction: column !important; /* Stack on Phone */
+    gap: 20px;
+  }
+
+  .portfolio-hero .big-thumb {
+    width: 100% !important;
+    height: 150px !important; /* Small height on Phone */
+    margin-bottom: 15px;
+  }
+
+  .portfolio-meta {
+    width: 100% !important;
+  }
+}
+
+  /* CLOSE BUTTON STYLING */
+.drawer-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+.drawer-close:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+/* --- BLOG PAGE RESPONSIVE (Correct Fix) --- */
+
+/* We target the .card INSIDE the .blog-list container */
+@media (max-width: 768px) {
+  
+  /* 1. Force Vertical Stack */
+  .blog-list .card {
+    flex-direction: column !important; /* Forces Stack */
+    height: auto !important;
+  }
+
+  /* 2. Target the Image (First Div inside the card) */
+  .blog-list .card > div:first-child {
+    width: 100% !important; 
+    height: 200px !important; 
+    border-right: none !important;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* 3. Target the Text (Second Div inside the card) */
+  .blog-list .card > div:last-child {
+    width: 100% !important;
+    padding: 20px !important;
+  }
+}
+
+/* --- SERVICES PAGE RESPONSIVE --- */
+
+@media (max-width: 768px) {
+  /* 1. Force Pricing Cards to Stack */
+  .pricing-grid {
+    grid-template-columns: 1fr !important; /* Overrides inline style */
+    gap: 30px !important;
+    padding: 0 10px; /* Adds a little breathing room on sides */
+  }
+
+  /* 2. Resize the Big Title */
+  main h1 {
+    font-size: 36px !important; /* Smaller than the desktop 48px */
+    line-height: 1.2;
+  }
+}
+  
+/* --- ABOUT PAGE RESPONSIVE --- */
+
+@media (max-width: 768px) {
+  /* 1. Force Text Centering (Overrides inline text-align: left) */
+  .hero, 
+  .about-content, 
+  main {
+    text-align: center !important;
+  }
+
+  /* 2. Stack Team Members Vertically */
+  .team-grid {
+    grid-template-columns: 1fr !important; /* Force 1 column */
+    gap: 40px !important;
+  }
+
+  /* 3. Adjust spacing for mobile reading */
+  .about-content p {
+    margin-bottom: 20px;
+    font-size: 16px; /* Slightly easier to read on phone */
+  }
+}
+
+/* --- CONTACT PAGE RESPONSIVE --- */
+
+@media (max-width: 768px) {
+  /* 1. Force Contact Grid to Stack (1 Column) */
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding: 0 10px;
+  }
+
+  /* 2. Resize Title */
+  .hero h1 {
+    font-size: 36px !important; /* Smaller than 52px */
+    line-height: 1.2;
+  }
+
+  /* 3. Center the Form Container */
+  /* This targets the div that holds the form */
+  main > div:last-child {
+    text-align: center !important; /* Force center alignment */
+    padding: 20px !important;
+  }
+
+  /* 4. Make Form Inputs Full Width */
+  form input, 
+  form textarea {
+    width: 100% !important;
+  }
+
+  /* 5. Center the Send Button */
+  form .submit-btn {
+    align-self: center !important; /* Centers the button */
+    width: 100% !important;        /* Makes button full width */
+  }
+}

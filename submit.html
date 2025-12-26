@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Submit Portfolio — Portfolyst</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/images/favicon.png" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <a href="index.html"><span class="logo-book">P</span><span class="brand-name">ortfolyst</span></a>
+      </div>
+      <div class="header-actions">
+        <a href="index.html" class="icon-btn">✕ Close</a>
+      </div>
+    </div>
+  </header>
+
+  <main style="max-width: 600px; margin: 40px auto; padding: 20px;">
+    <section class="hero" style="text-align: left; padding: 0 0 20px 0;">
+      <h1>Submit your work</h1>
+      <p class="subtitle">Showcase your portfolio to the world.</p>
+    </section>
+
+    <form id="submit-form" class="portfolio-detail">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required placeholder="e.g. Ankur Narwal" style="width: 100%; padding: 12px; margin-top: 8px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg); color: var(--text);">
+      </div>
+
+      <div class="form-group" style="margin-top: 20px;">
+        <label for="role">Role / Title</label>
+        <input type="text" id="role" required placeholder="e.g. Product Designer" style="width: 100%; padding: 12px; margin-top: 8px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg); color: var(--text);">
+      </div>
+
+      <div class="form-group" style="margin-top: 20px;">
+        <label for="link">Portfolio URL</label>
+        <input type="url" id="link" required placeholder="https://..." style="width: 100%; padding: 12px; margin-top: 8px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg); color: var(--text);">
+      </div>
+
+      <div class="form-group" style="margin-top: 20px;">
+        <label>Categories</label>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px;">
+          <label><input type="checkbox" name="cat" value="code"> Code</label>
+          <label><input type="checkbox" name="cat" value="design"> Design</label>
+          <label><input type="checkbox" name="cat" value="dark"> Dark Mode</label>
+          <label><input type="checkbox" name="cat" value="minimal"> Minimal</label>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn" style="width: 100%; margin-top: 30px; border: none; font-size: 16px; cursor: pointer;">Submit Portfolio</button>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    // Simple script to handle form submission for demo purposes
+    document.getElementById('submit-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('button');
+      const originalText = btn.innerText;
+      
+      btn.innerText = "Sending...";
+      btn.style.opacity = "0.7";
+
+      // Simulate network request
+      setTimeout(() => {
+        alert("✅ Success! Your portfolio has been submitted for review.");
+        window.location.href = "index.html";
+      }, 1000);
+    });
+  </script>
+</body>
+</html>

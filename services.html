@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Services — Portfolyst</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mobres.css" />
+</head>
+<body>
+  <header class="site-header desktop-only-header">
+  <div class="header-inner">
+    <div class="brand">
+      <a href="index.html" style="text-decoration:none; display:flex; align-items:center;">
+        <span class="logo-book">P</span><span class="brand-name">ortfolyst</span>
+      </a>
+    </div>
+
+    <nav class="main-nav" style="margin-left: 30px; display: flex; gap: 24px;">
+      <a href="index.html" style="text-decoration: none; color: var(--text); font-weight: 500;">Home</a>
+      <a href="blog.html" style="text-decoration: none; color: var(--text); font-weight: 500;">Blog</a>
+      <a href="services.html" class="active" style="text-decoration: none; color: var(--text);">Services</a>
+      <a href="about.html" style="text-decoration: none; color: var(--text); font-weight: 500;">About Us</a>
+      <a href="contact.html" style="text-decoration: none; color: var(--text); font-weight: 500;">Contact Us</a>
+    </nav>
+
+    <div class="header-actions">
+      <button id="theme-toggle" class="icon-btn" title="Toggle dark/light">🌙</button>
+      <a href="submit.html" class="submit-btn">Submit Portfolio</a>
+    </div>
+  </div>
+</header>
+
+<header class="site-header mobile-only-header">
+  <div class="mobile-header-inner">
+    <button class="menu-toggle">☰</button>
+    
+    <div class="brand">
+       <a href="index.html" style="text-decoration:none; display:flex; align-items:center; color:inherit;">
+         <span class="logo-book">P</span><span class="brand-name">ortfolyst</span>
+       </a>
+    </div>
+    
+    <button id="theme-toggle-mobile" class="icon-btn">🌙</button>
+  </div>
+
+  <nav class="mobile-drawer">
+    <button class="drawer-close">✕</button>
+    <a href="index.html">Home</a>
+    <a href="blog.html">Blog</a>
+    <a href="services.html" style="color:var(--accent);">Services</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="submit.html" style="color: var(--accent); font-weight:bold;">Submit Portfolio</a>
+  </nav>
+</header>
+
+  <main style="max-width: 1000px; margin: 10px auto; padding: 20px; text-align: center;">
+    <h1 style="font-size: 48px; margin-bottom: 10px;">Get a Professional Portfolio</h1>
+    <p class="subtitle" style="margin-bottom: 50px;">Choose a package and let us build your digital identity.</p>
+
+    <div class="pricing-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+      
+      <div class="card" style="padding: 30px; text-align: left; border: 1px solid var(--border);">
+        <h3 style="margin-top: 0;">Starter</h3>
+        <div style="font-size: 36px; font-weight: 800; margin: 10px 0;">₹1499</div>
+        <p style="color: var(--muted);">Perfect for students and beginners.</p>
+        <ul style="list-style: none; padding: 0; line-height: 2; margin: 20px 0;">
+          <li>✅ Single Page Layout</li>
+          <li>✅ Mobile Responsive</li>
+          <li>✅ Dark/Light Mode</li>
+          <li>❌ Custom Domain Setup</li>
+        </ul>
+        <a href="mailto:services@portfolyst.com?subject=Starter Package" class="submit-btn" style="display: block; text-align: center;">Choose Starter</a>
+      </div>
+
+      <div class="card" style="padding: 30px; text-align: left; border: 2px solid var(--accent); position: relative;">
+        <span style="position: absolute; top: 0; right: 0; background: var(--accent); color: white; padding: 5px 10px; font-size: 12px; font-weight: bold; border-bottom-left-radius: 8px;">POPULAR</span>
+        <h3 style="margin-top: 0;">Professional</h3>
+        <div style="font-size: 36px; font-weight: 800; margin: 10px 0;">₹2449</div>
+        <p style="color: var(--muted);">For freelancers and job seekers.</p>
+        <ul style="list-style: none; padding: 0; line-height: 2; margin: 20px 0;">
+          <li>✅ Multi-page Website</li>
+          <li>✅ Blog Integration</li>
+          <li>✅ SEO Optimization</li>
+          <li>✅ Contact Form Integration</li>
+        </ul>
+        <a href="mailto:services@portfolyst.com?subject=Professional Package" class="submit-btn" style="display: block; text-align: center;">Choose Professional</a>
+      </div>
+
+      <div class="card" style="padding: 30px; text-align: left; border: 1px solid var(--border);">
+        <h3 style="margin-top: 0;">Custom</h3>
+        <div style="font-size: 36px; font-weight: 800; margin: 10px 0;">₹4499+</div>
+        <p style="color: var(--muted);">Fully tailored design for agencies.</p>
+        <ul style="list-style: none; padding: 0; line-height: 2; margin: 20px 0;">
+          <li>✅ Completely Custom Design</li>
+          <li>✅ Animations & Interactive</li>
+          <li>✅ CMS Integration</li>
+          <li>✅ Priority Support</li>
+        </ul>
+        <a href="mailto:services@portfolyst.com?subject=Custom Package" class="submit-btn" style="display: block; text-align: center; background: transparent; color: var(--text); border: 1px solid var(--border);">Contact Sales</a>
+      </div>
+
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog — Portfolyst</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mobres.css" />
+</head>
+<body>
+
+  <header class="site-header desktop-only-header">
+    <div class="header-inner">
+      <div class="brand">
+        <a href="index.html" style="text-decoration:none; display:flex; align-items:center;">
+          <span class="logo-book">P</span><span class="brand-name">ortfolyst</span>
+        </a>
+      </div>
+
+      <nav class="main-nav" style="margin-left: 30px; display: flex; gap: 24px;">
+        <a href="index.html" style="text-decoration: none; color: var(--text); font-weight: 500;">Home</a>
+        <a href="blog.html" class="active" style="text-decoration: none; color: var(--accent); font-weight: 700;">Blog</a>
+        <a href="services.html" style="text-decoration: none; color: var(--text); font-weight: 500;">Services</a>
+        <a href="about.html" style="text-decoration: none; color: var(--text); font-weight: 500;">About Us</a>
+        <a href="contact.html" style="text-decoration: none; color: var(--text); font-weight: 500;">Contact Us</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="theme-toggle" class="icon-btn">🌙</button>
+        <a href="submit.html" class="submit-btn">Submit Portfolio</a>
+      </div>
+    </div>
+  </header>
+
+  <header class="site-header mobile-only-header">
+    <div class="mobile-header-inner">
+      <button class="menu-toggle">☰</button>
+      <div class="brand">
+         <a href="index.html" style="text-decoration:none; display:flex; align-items:center; color:inherit;">
+           <span class="logo-book">P</span><span class="brand-name">ortfolyst</span>
+         </a>
+      </div>
+      <button id="theme-toggle-mobile" class="icon-btn">🌙</button>
+    </div>
+
+    <nav class="mobile-drawer">
+      <button class="drawer-close">✕</button>
+      <a href="index.html">Home</a>
+      <a href="blog.html" style="color:var(--accent);">Blog</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="submit.html" style="color: var(--accent); font-weight:bold;">Submit Portfolio</a>
+    </nav>
+  </header>
+
+  <main style="max-width: 800px; margin: 10px auto; padding: 20px;">
+    <section class="hero" style="text-align: left; padding: 0 0 40px 0;">
+      <h1>Portfolio Guides</h1>
+      <p class="subtitle">Tips, strategies, and best practices for building a killer portfolio.</p>
+    </section>
+
+    <div class="blog-list" style="display: flex; flex-direction: column; gap: 30px;">
+      
+      <article class="card " style="flex-direction: row; padding: 0; align-items: stretch; min-height: 200px;">
+        <div style="width: 250px; background: #ddd; background-image: url('assets/images/bg1.png'); background-size: cover; background-position: center;"></div>
+        <div style="padding: 24px; flex: 1;">
+          <span style="font-size: 12px; color: var(--accent); font-weight: bold; text-transform: uppercase;">Guide</span>
+          <h2 style="margin: 8px 0; font-size: 22px;">4 Mistakes Developers Make in Portfolios</h2>
+          <p style="color: var(--muted); margin-bottom: 20px;">Stop putting skill bars on your resume. Here is what recruiters actually look for when hiring devs.</p>
+          <button class="read-btn" data-id="1" style="background:none; border:none; padding:0; color:var(--text); font-weight:600; text-decoration:underline; cursor:pointer;">Read Article</button>
+        </div>
+      </article>
+
+      <article class="card " style="flex-direction: row; padding: 0; align-items: stretch; min-height: 200px;">
+        <div style="width: 250px; background: #ddd; background-image: url('assets/images/bg2.png'); background-size: cover; background-position: center;"></div>
+        <div style="padding: 24px; flex: 1;">
+          <span style="font-size: 12px; color: var(--accent); font-weight: bold; text-transform: uppercase;">Inspiration</span>
+          <h2 style="margin: 8px 0; font-size: 22px;">How to choose the right typography</h2>
+          <p style="color: var(--muted); margin-bottom: 20px;">Typography can make or break your design. Learn the basics of pairing fonts.</p>
+          <button class="read-btn" data-id="2" style="background:none; border:none; padding:0; color:var(--text); font-weight:600; text-decoration:underline; cursor:pointer;">Read Article</button>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <div id="blog-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button id="close-modal" class="close-btn">&times;</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  
+  <script>
+    // YOUR ORIGINAL CONTENT SCRIPT
+    const blogPosts = {
+      1: {
+        title: "4 Mistakes Developers Make in Portfolios",
+        image: "assets/images/bg1.png",
+        content: `
+          <p><strong>1. Putting Skill Bars.</strong> Giving yourself "80% in JavaScript" is meaningless. 80% of what? The entire language? Instead, show projects that use those skills.</p>
+          <p><strong>2. Broken Links.</strong> Nothing kills a job opportunity faster than a 404 error on your "Best Work" link. Check them weekly.</p>
+          <p><strong>3. No Context.</strong> Don't just post a screenshot. Explain <em>what</em> you built, <em>why</em> you built it, and <em>how</em> you solved the problems.</p>
+          <p><strong>4. Slow Load Times.</strong> If your portfolio takes 10 seconds to load because of unoptimized images, you failed the first test of being a web developer.</p>
+          <h3>The Solution?</h3>
+          <p>Keep it clean, keep it fast, and let the work speak for itself.</p>
+        `
+      },
+      2: {
+        title: "How to choose the right typography",
+        image: "assets/images/bg2.png",
+        content: `
+          <p>Typography is 90% of web design. If your text is hard to read, your design has failed.</p>
+          <p><strong>Serif vs Sans-Serif:</strong> Use Sans-Serif (like Inter or Roboto) for UI elements and headers. Use Serif (like Merriweather) for long-form reading to give it a classic feel.</p>
+          <p><strong>Line Height:</strong> A good rule of thumb is 1.5x the font size. If your text is bunched up, users will stop reading.</p>
+          <p><strong>Contrast:</strong> Light grey text on a white background is trendy but inaccessible. Ensure your text passes contrast ratios.</p>
+        `
+      }
+    };
+
+    const modal = document.getElementById('blog-modal');
+    const modalBody = document.getElementById('modal-body');
+    const closeBtn = document.getElementById('close-modal');
+    const buttons = document.querySelectorAll('.read-btn');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-id');
+        const post = blogPosts[id];
+
+        if(post) {
+          modalBody.innerHTML = `
+            <h2 style="margin-top:0;">${post.title}</h2>
+            <div style="line-height: 1.8; color: var(--muted);">${post.content}</div>
+          `;
+          modal.classList.add('open');
+          document.body.style.overflow = 'hidden'; 
+        }
+      });
+    });
+
+    function closeModal() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    if(closeBtn) closeBtn.addEventListener('click', closeModal);
+    if(modal) modal.addEventListener('click', (e) => { if(e.target === modal) closeModal(); });
+  </script>
+</body>
+</html>

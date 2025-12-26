@@ -1,0 +1,626 @@
+:root {
+  --bg: #ffffff;
+  --text: #111;
+  --muted: #666;
+  --accent: #ff4f4f;
+  --card-bg: #fff;
+  --border: #e5e5e5;
+  --shadow: 0 6px 18px rgba(15, 15, 15, 0.06);
+}
+
+
+
+body.dark {
+  --bg: #111111;
+  --text: #ffffff;
+  --accent: #ff4f4f;
+  --border: #333333;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body.dark {
+  --icon-filter: invert(1);
+}
+
+body {
+  --icon-filter: invert(0);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  color: var(--text);
+  z-index: 100;
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header.small {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+
+.header-inner {
+  max-width: 100%;
+  margin: 0 ;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+}
+
+.brand a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-book {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background: linear-gradient(45deg, var(--accent), #ff8a70);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 800;
+  margin-right: 2px;
+}
+
+.brand-name {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.submit-btn {
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hero {
+  padding: 24px 18px 18px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 56px;
+  margin: 8px 0 6px;
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin: 0;
+  font-size: 16px;
+}
+
+.controls {
+  max-width: 100%;
+  margin: 12px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+.filters {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter-btn {
+  border: none;
+  background: none;
+  padding: 8px 6px;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.filter-btn.active {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 6px;
+}
+
+.search-wrap {
+  display: flex;
+  align-items: center;
+}
+
+#search {
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  min-width: 220px;
+}
+
+.grid {
+  max-width: 100%;
+  margin: 20px 0 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  padding: 0 24px;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+.card:hover {
+  /* This makes it "Pop Out" */
+  transform: translateY(-10px) scale(1.02); 
+  
+  /* This adds a deep shadow to make it look like it is floating */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  
+  /* Optional: adds a subtle border color change */
+  border-color: var(--border); 
+}
+
+.card-thumb {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.thumb {
+  width: 100%;
+  height: 220px;
+  background: linear-gradient(120deg, #eee, #ddd);
+  background-size: cover;
+  background-position: center;
+}
+
+.card-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 18px;
+}
+
+.external {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 18px;
+}
+
+
+
+.site-footer {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  padding: 15px 40px;
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+}
+.footer-inner {
+  display: flex;                
+  justify-content: space-between;
+  align-items: center;         
+  max-width: 100%;              
+  margin: 0;
+  padding: 0;                   
+}
+.footer-inner p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.social-links p {
+  margin: 0;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.social-links img {
+  width: 22px;
+  height: 22px;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  filter: var(--icon-filter);
+}
+
+
+.footer-inner p span,
+.footer-inner p .heart {
+  color: #ff4f4f;
+}
+
+
+
+
+
+.social-links img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+
+.detail-page {
+  max-width: 100%;
+  margin: 18px ;
+  padding: 18px 24px;
+}
+
+.portfolio-detail {
+  background: var(--card-bg);
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.portfolio-hero {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.portfolio-hero .big-thumb {
+  width: 60%;
+  height: 360px;
+  background: linear-gradient(120deg, #eee, #ddd);
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+
+.portfolio-meta {
+  flex: 1;
+}
+
+.portfolio-meta h2 {
+  margin-top: 0;
+}
+
+.meta-row {
+  color: var(--muted);
+  margin: 10px 0;
+}
+
+
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero h1 {
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-inner {
+    padding: 12px;
+  }
+
+  .hero {
+    padding: 22px 12px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+}
+
+/* Dark Mode */
+body.dark {
+  --bg: #0b0c0f;
+  --text: #e7eef8;
+  --muted: #aab7c4;
+  --card-bg: #0f1316;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Portfolio Detail Page Styles */
+
+.portfolio-detail {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Back button */
+.back-btn {
+    position: absolute;
+    left: 30px;
+    top: 40px;
+    font-size: 26px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+/* Title styling */
+.portfolio-title {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+/* Date below title */
+.portfolio-date {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+/* Centered preview image */
+.portfolio-preview img {
+    width: 100%;
+    max-width: 1100px;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* REMOVE ANYTHING EXTRA */
+.middle-icon,
+.middle-img-wrapper {
+    display: none !important;
+}
+
+/* Add to bottom of style.css */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.project-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 20px;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+.project-card h4 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.project-card a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.portfolio-hero {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Mobile responsive for detail page */
+@media (max-width: 768px) {
+  .portfolio-hero {
+    flex-direction: column;
+  }
+  .big-thumb {
+    width: 100% !important;
+    height: 250px !important;
+  }
+}
+
+/* BLOG MODAL STYLES */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dim background */
+  backdrop-filter: blur(5px);      /* Blur effect */
+  z-index: 2000;                   /* On top of everything */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: var(--bg);
+  color: var(--text);
+  padding: 30px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 85vh;
+  overflow-y: auto; /* Scroll if text is long */
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  position: relative;
+  border: 1px solid var(--border);
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.open .modal-content {
+  transform: scale(1);
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--text);
+  line-height: 1;
+}
+
+.close-btn:hover {
+  color: var(--accent);
+}
+
+/* CONTACT PAGE STYLES */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow);
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+}
+
+.contact-card .icon {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.contact-card .label {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* Active Navigation Link */
+.main-nav a.active {
+  color: var(--accent) !important; /* Forces it to be red */
+  font-weight: 700 !important;     /* Makes it bold */
+}
+
+/* Normal Navigation Link */
+.main-nav a {
+  transition: color 0.2s ease;
+}
+
+.main-nav a:hover {
+  color: var(--accent);
+}
+
+/* --- DUEL HEADER SYSTEM --- */
+
+/* By default (Desktop), hide the mobile header completely */
+.mobile-only-header {
+  display: none !important;
+}
+
+/* Ensure the desktop header is visible */
+.desktop-only-header {
+  display: block;
+}
+
+/* --- FIX PORTFOLIO DETAIL PAGE ON DESKTOP --- */
+@media (min-width: 769px) {
+  /* 1. Force the Hero section to be a Row */
+  .portfolio-hero {
+    display: flex !important;
+    flex-direction: row !important; /* Side-by-side */
+    align-items: flex-start !important;
+    gap: 40px;
+  }
+
+  /* 2. Fix the Image Width */
+  .portfolio-hero .big-thumb {
+    width: 65% !important; /* The image takes 65% */
+    height: 400px !important; /* Restore original big height */
+    margin-bottom: 0 !important;
+  }
+
+  /* 3. Fix the Text Width */
+  .portfolio-meta {
+    width: 35% !important; /* The text takes the remaining space */
+    text-align: left !important;
+    padding-top: 0 !important;
+  }
+}
